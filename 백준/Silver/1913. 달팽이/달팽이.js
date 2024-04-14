@@ -32,7 +32,7 @@ for (let i = 2; i<= n*n; i++){
   direction = (direction+1) % 4 
   let nx = x+dx[direction];
   let ny = y+dy[direction];  
-  if (arr[nx][ny] !== 0) { // 이미 지나간 곳
+  if (!inRange(nx, ny) || arr[nx][ny] !== 0) { // 범위를 벗어나거나 이미 숫자가 있으면
     direction = (direction -1 + 4) % 4;
   } 
 
