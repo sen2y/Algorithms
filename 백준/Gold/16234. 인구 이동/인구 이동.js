@@ -17,12 +17,7 @@ function movePopulation() {
   // 전체 arr 순회하며 가능한 모든 연합 찾기 + 인구 재분배 수행
   let totalMoved = false; // 인구 이동 여부, 초기값 false
   const visited = Array.from({ length: n }, () => Array(n).fill(false)); // n x n 배열, 방문 여부
-  const directions = [
-    [-1, 0],
-    [0, 1],
-    [1, 0],
-    [0, -1],
-  ]; // 북, 동, 남, 서
+  const directions = [[-1, 0], [0, 1], [1, 0], [0, -1],]; // 북, 동, 남, 서
 
   for (let x = 0; x < n; x++) {
     for (let y = 0; y < n; y++) {
@@ -35,16 +30,16 @@ function movePopulation() {
         // 스택이 빌 때까지 반복
         const [cx, cy] = stack.pop(); // 스택에서 하나의 칸 꺼내기
         if (visited[cx][cy]) continue; // 이미 방문한 경우 건너뛰기
-        visited[cx][cy] = true; // 방문 처리
-        union.push([cx, cy]); // 연합에 추가
-        sum += arr[cx][cy]; // 인구 수 더하기
+        visited[cx][cy] = true; // 현재 칸 방문 처리
+        union.push([cx, cy]); // 현재 칸 연합에 추가
+        sum += arr[cx][cy]; // 현재 칸 인구 수 더하기
         for (let dir of directions) {
           // 북동남서 이중배열로 반복문 수행
           const nx = cx + dir[0]; // 다음 x 좌표
           const ny = cy + dir[1]; // 다음 y 좌표
           if (canMove(cx, cy, nx, ny) && !visited[nx][ny]) {
-            // 이동 가능하고 방문하지 않은 경우
-            stack.push([nx, ny]); // 스택에 추가
+            // 다음 칸이 이동 가능하고 방문하지 않은 경우
+            stack.push([nx, ny]); // 다음 칸 스택에 추가
           }
         }
       }
