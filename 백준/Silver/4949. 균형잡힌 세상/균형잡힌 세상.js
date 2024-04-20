@@ -15,10 +15,8 @@ for (str in arr) {
      
       if (
         (!stack.length && x == ")") ||
-        (!stack.length && x == "]") ||
-        (stack[stack.length - 1] == "(" && x == "]") ||
-        (stack[stack.length - 1] == "[" && x == ")")
-      ) {
+        (!stack.length && x == "]")
+         ) {
         flag = false;
         break;
         
