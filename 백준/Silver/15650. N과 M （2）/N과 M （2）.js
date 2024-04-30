@@ -13,7 +13,7 @@ const dfs = (depth) => {
   }
   for (let i = 0; i < n; i++){
    if (!visited[i]) { 
-     if (arr.length > 0) { 
+     if (arr.length > 0) { // 이 문제는 중복순열. 배열의 이전값보다 현재 i값이 크면 넘어가는 코드 추가
         if (arr[arr.length-1] > i) continue;
       }
       visited[i] = true;
