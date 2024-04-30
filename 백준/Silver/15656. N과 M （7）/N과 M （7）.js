@@ -1,10 +1,7 @@
 const fs = require("fs");
 const input = fs.readFileSync("/dev/stdin").toString().trim().split("\n");
 const [n, m] = input[0].split(' ').map(Number); 
-const numberSort = (n1, n2) => {
-  return n1 - n2;
-}
-const num = input[1].split(' ').map(Number).sort(numberSort)
+const num = input[1].split(' ').map(Number).sort((a,b) => a-b)
 
 let arr = []; // 현재 진행 중인 배열
 let answer = ""; // 정답 문자열 -> 한 번에 정답코드 출력하기 위해.   
