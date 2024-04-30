@@ -2,6 +2,7 @@ const fs = require("fs");
 const input = fs.readFileSync("/dev/stdin").toString().trim().split("\n");
 const [n, m] = input[0].split(' ').map(Number); 
 
+// 중복순열이므로, visited를 따지지 않는다. 
 let arr = [];
 let answer = "";
 
