@@ -54,7 +54,7 @@ class Queue {
 
 // BFS 메서드 정의
 // 각 노드가 방문된 정보를 표현
-let visitedB = Array(9).fill(false);
+let visitedB = new Array(9).fill(false);
 function bfs(graph, start, visited) {
   const queue = new Queue();
   queue.enqueue(start);
