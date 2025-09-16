@@ -15,7 +15,7 @@ def solution(users, emoticons):
             # 각 조합별 가격체크
             for c, p in zip(comb, emoticons):
                 if c<rate: continue
-                saleprice = p * (100 - c) // 100
+                saleprice = int(((100-c)/100*p)+0.5)
                 price += saleprice
                 # print(1, saleprice)
                 
@@ -29,6 +29,7 @@ def solution(users, emoticons):
         if (answer[0] < sub) or ((answer[0] == sub) and  answer[1] < sale): 
             answer = [sub, sale]
             # print(5, answer) 
+            print(0.7 * 1000)
         
     
     
